@@ -30,6 +30,15 @@
         .presentacion{
             color: #FF9F1C;
         }
+        @media (max-width: 767px) {
+            .parrafo{
+            text-align: center;
+            }
+            .boton-slaider{
+                display: flex;
+                justify-content: center;
+            }
+        }
     </style>
 
     <!-- inicio navegador -->
@@ -76,28 +85,33 @@
 
                                 <div class="row my-5">
 
-                                    <div class="col-12 col-md-6 align-self-center mb-3 mb-md-0">
+                                    <div class="col-12 col-md-6 mb-3 mb-md-0">
                                         
                                         <div class="row">
 
-                                            <div class="col-12 div slaider-fond text-white lead">
+                                            <div class="col-12 div slaider-fond text-white">
 
-                                                <h3 class="text-success">Cursos</h3>
+                                                <h3 class="parrafo text-success h1">Cursos</h3>
 
                                             </div>
 
                                             <div class="col-12">
 
-                                                <p class="text-white text-justify slaider-fond lead"> 
+                                                <p class="parrafo h3 text-white slaider-fond"> 
                                                     <svg class="bi bi-envelope-open" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                                     <path fill-rule="evenodd" d="M.243 6.929l.514-.858L8 10.417l7.243-4.346.514.858L8 11.583.243 6.93z" clip-rule="evenodd"/>
                                                     <path fill-rule="evenodd" d="M7.184 10.68L.752 14.432l-.504-.864L6.68 9.816l.504.864zm1.632 0l6.432 3.752.504-.864L9.32 9.816l-.504.864z" clip-rule="evenodd"/>
                                                     <path fill-rule="evenodd" d="M8.47 1.318a1 1 0 00-.94 0l-6 3.2A1 1 0 001 5.4V14a1 1 0 001 1h12a1 1 0 001-1V5.4a1 1 0 00-.53-.882l-6-3.2zM7.06.435a2 2 0 011.882 0l6 3.2A2 2 0 0116 5.4V14a2 2 0 01-2 2H2a2 2 0 01-2-2V5.4a2 2 0 011.059-1.765l6-3.2z" clip-rule="evenodd"/>
                                                     </svg> Te invitamos a ser parte de nuestros cursos de desarrollo web básico y intermedio</p>
 
-                                                  <a href="#" class="btn btn-outline-success my-2 my-sm-0">💻  ver cursos</a>
+                                                <div class="boton-slaider">
+                                                    <a href="#" class="btn btn-outline-success my-2 my-sm-3">💻  ver cursos</a>
+                                                </div>
+
                                             </div>
+
                                         </div>
+
                                     </div>
 
                                     <div class="col-12 col-md-6 mt-md-4 mb-md-5 mb-3 mb-md-0">
@@ -118,26 +132,23 @@
 
                                 <div class="row my-5">
 
-                                    <div class="col-12 col-md-6 align-self-center mb-3 mb-md-0">
+                                    <div class="col-12 col-md-6 mb-3 mb-md-0">
 
                                         <div class="row">
 
-                                            <div class="col-12 div slaider-fond text-white lead">
+                                            <div class="col-12 div slaider-fond text-white">
 
-                                                <h3 class="text-success">Ferias</h3>
+                                                <h3 class="parrafo text-success h1">Ferias</h3>
 
                                             </div>
 
                                             <div class="col-12">
-                                                <p class="text-white text-justify slaider-fond lead"> 
-                                                    <svg class="bi bi-newspaper" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                                                        <path fill-rule="evenodd" d="M0 2A1.5 1.5 0 011.5.5h11A1.5 1.5 0 0114 2v12a1.5 1.5 0 01-1.5 1.5h-11A1.5 1.5 0 010 14V2zm1.5-.5A.5.5 0 001 2v12a.5.5 0 00.5.5h11a.5.5 0 00.5-.5V2a.5.5 0 00-.5-.5h-11z" clip-rule="evenodd"/>
-                                                        <path fill-rule="evenodd" d="M15.5 3a.5.5 0 01.5.5V14a1.5 1.5 0 01-1.5 1.5h-3v-1h3a.5.5 0 00.5-.5V3.5a.5.5 0 01.5-.5z" clip-rule="evenodd"/>
-                                                        <path d="M2 3h10v2H2V3zm0 3h4v3H2V6zm0 4h4v1H2v-1zm0 2h4v1H2v-1zm5-6h2v1H7V6zm3 0h2v1h-2V6zM7 8h2v1H7V8zm3 0h2v1h-2V8zm-3 2h2v1H7v-1zm3 0h2v1h-2v-1zm-3 2h2v1H7v-1zm3 0h2v1h-2v-1z"/>
-                                                      </svg>
-                                                      Con lo aprendido podrás realizar tus propios proyectos y poder promocionarlos en las ferias que se realizan en nuestra universidad
+                                                <p class="parrafo h3 text-white slaider-fond"> 
+                                                     Podras exponer tus proyectos en ferias realizadas por la universidad
                                                 </p>
-
+                                                <p class="text-white parrafo">
+                                                    "Open Info" es una ventana de oportunidades para los estudiantes, Nos visitan empresas e instituciones que examinan los proyectos con el fin de conocer que es lo que se está desarrollando y aplicarlas en sus servicios
+                                                </p>
                                             </div>
 
                                         </div>
@@ -157,13 +168,7 @@
                           </div>
                           
                         </div>
-                        
-                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                          
-                        </a>
-                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                          
-                        </a>
+                    
                     </div>
                 </div>
             </div>
