@@ -1,0 +1,31 @@
+
+        .enlaces{
+            font-family: 'Anton', sans-serif;
+        }
+        .registro{
+            background-color: #f79e1d;
+            border-radius: 10px;
+            color: white;
+        }
+        .slaider-header{
+            background-color: #22303a;
+        }
+        .slaider-fond{
+            font-family: 'Archivo Black', sans-serif;
+        }
+        .presentacion{
+            color: #FF9F1C;
+        }
+        /* footer */
+        .pie-pagina{
+            background-color: #22303a;
+        }
+        @media (max-width: 767px) {
+            .parrafo{
+            text-align: center;
+            }
+            .boton-slaider{
+                display: flex;
+                justify-content: center;
+            }
+        }
