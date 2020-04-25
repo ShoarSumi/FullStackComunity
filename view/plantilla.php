@@ -20,6 +20,8 @@
         if(isset($_GET["ruta"])){
             if($_GET["ruta"]=="inicio" ||  $_GET["ruta"]=="blog"){
                 include "modulos/".$_GET["ruta"].".php";
+            }else{
+                include 'modulos/404.php';
             }
         }else{
             include 'modulos/inicio.php';

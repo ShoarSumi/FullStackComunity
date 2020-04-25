@@ -20,6 +20,11 @@
         .pie-pagina{
             background-color: #22303a;
         }
+        .error{
+            height: 75vh;
+            width: 100%;
+
+        }
         @media (max-width: 767px) {
             .parrafo{
             text-align: center;
