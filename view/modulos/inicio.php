@@ -124,7 +124,7 @@
         <div class="container">
             <div class="row">
 
-                <div class="col-12 col-md-3 my-5">
+                <div class="col-12 col-lg-3 my-5">
                     <div class="card w-100">
                         <img src="view/img/php.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
@@ -157,7 +157,7 @@
                       </div>
                 </div>
 
-                <div class="col-12 col-md-3 my-5">
+                <div class="col-12 col-lg-3 my-5">
                     <div class="card w-100">
                         <img src="view/img/php.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
@@ -190,7 +190,7 @@
                       </div>
                 </div>
 
-                <div class="col-12 col-md-3 my-5">
+                <div class="col-12 col-lg-3 my-5">
                     <div class="card w-100">
                         <img src="view/img/html.png" class="card-img-top" alt="...">
                         <div class="card-body">
@@ -223,7 +223,7 @@
                       </div>
                 </div>
 
-                <div class="col-12 col-md-3 my-5">
+                <div class="col-12 col-lg-3 my-5">
                     <div class="card w-100">
                         <img src="view/img/NodeJs.png" class="card-img-top" alt="...">
                         <div class="card-body">
@@ -258,7 +258,7 @@
 
 
 
-                <div class="col-12 col-md-3 my-5">
+                <div class="col-12 col-lg-3 my-5">
                     <div class="card w-100">
                         <img src="view/img/php.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
@@ -291,7 +291,7 @@
                       </div>
                 </div>
 
-                <div class="col-12 col-md-3 my-5">
+                <div class="col-12 col-lg-3 my-5">
                     <div class="card w-100">
                         <img src="view/img/php.jpg" class="card-img-top" alt="...">
                         <div class="card-body">
