@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,25 +12,46 @@
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="view/css/bootstrap.min.css">
     <link rel="stylesheet" href="view/css/fullstack.css">
+    <!-- iconos -->
+    <!--Fontawesome CDN-->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
     <link rel="icon" href="view/img/logoMin1.png">
     <title>FullStack</title>
 </head>
 <body>
 
     <?php
-        include 'modulos/cabezote.php';
+            if(isset($_GET["ruta"]) && ($_GET["ruta"]=="login" || $_GET["ruta"]=="registrar")){
 
-        if(isset($_GET["ruta"])){
-            if($_GET["ruta"]=="inicio" ||  $_GET["ruta"]=="blog"){
-                include "modulos/".$_GET["ruta"].".php";
+                include 'modulos/'.$_GET["ruta"].'.php';
+
             }else{
-                include 'modulos/404.php';
-            }
-        }else{
-            include 'modulos/inicio.php';
-        }
-        include 'modulos/footer.php';
 
+            include 'modulos/cabezote.php';
+
+
+            if(isset($_GET["ruta"])){
+
+                if($_GET["ruta"]=="inicio"  ||  $_GET["ruta"]=="blog" || $_GET["ruta"]=="login" || $_GET["ruta"]=="cerrar"){
+
+                    include "modulos/".$_GET["ruta"].".php";
+
+                }else{
+
+                    include 'modulos/404.php';
+
+                }
+
+            }else{
+
+                include 'modulos/inicio.php';
+
+            }
+
+            include 'modulos/footer.php';
+            
+        }
     ?>
 
     

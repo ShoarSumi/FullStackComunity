@@ -3,9 +3,12 @@
             font-family: 'Anton', sans-serif;
         }
         .registro{
-            background-color: #f79e1d;
+            background-color: #FFC312;
             border-radius: 10px;
             color: white;
+        }
+        .registro:hover{
+            opacity: 90%;
         }
         .slaider-header{
             background-color: #22303a;
@@ -23,8 +26,108 @@
         .error{
             height: 75vh;
             width: 100%;
+        }
+
+        .logo-user{
+            height: 30px;
+            width: 30px;
+            border-radius: 10%;
+        }
+
+        /* inicio login */
+        /* Made with love by Mutiullah Samim*/
+
+        @import url('https://fonts.googleapis.com/css?family=Numans');
+
+        .login-fondo{
+        background-image: url('../img/desarrollo.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 100vh;
+        font-family: 'Numans', sans-serif;
+        }
+
+        .container{
+        height: 100%;
+        align-content: center;
+        }
+
+        .card-login{
+        height: 370px;
+        margin-top: auto;
+        margin-bottom: auto;
+        width: 50%;
+        background-color: rgba(0,0,0,0.5) !important;
+        }
+
+        .social_icon span{
+        font-size: 60px;
+        margin-left: 10px;
+        color: #FFC312;
+        }
+
+        .social_icon span:hover{
+        color: white;
+        cursor: pointer;
+        }
+
+        .card-header h3{
+        color: white;
+        }
+
+        .social_icon{
+        position: absolute;
+        right: 20px;
+        top: -45px;
+        }
+
+        .input-group-prepend span{
+        width: 50px;
+        background-color: #FFC312;
+        color: black;
+        border:0 !important;
+        }
+
+        input:focus{
+        outline: 0 0 0 0  !important;
+        box-shadow: 0 0 0 0 !important;
 
         }
+
+        .remember{
+        color: white;
+        }
+
+        .remember input
+        {
+        width: 20px;
+        height: 20px;
+        margin-left: 15px;
+        margin-right: 5px;
+        }
+
+        .login_btn{
+        color: black;
+        background-color: #FFC312;
+        width: 100px;
+        }
+
+        .login_btn:hover{
+        color: black;
+        background-color: white;
+        }
+
+        .links{
+        color: white;
+        }
+
+        .links a{
+        margin-left: 4px;
+        }
+
+        /* fin login */
+
+
         @media (max-width: 767px) {
             .parrafo{
             text-align: center;
@@ -32,5 +135,8 @@
             .boton-slaider{
                 display: flex;
                 justify-content: center;
+            }
+            .registro{
+                text-align: center;
             }
         }
