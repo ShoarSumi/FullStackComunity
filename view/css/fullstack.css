@@ -37,6 +37,7 @@
         /* inicio login */
         /* Made with love by Mutiullah Samim*/
 
+        
         @import url('https://fonts.googleapis.com/css?family=Numans');
 
         .login-fondo{
@@ -45,6 +46,7 @@
         background-repeat: no-repeat;
         height: 100vh;
         font-family: 'Numans', sans-serif;
+        overflow: hidden;
         }
 
         .container{
@@ -53,7 +55,6 @@
         }
 
         .card-login{
-        height: 370px;
         margin-top: auto;
         margin-bottom: auto;
         width: 50%;

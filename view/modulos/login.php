@@ -4,9 +4,9 @@
                         <div class="row h-100">
                             <div class="col-12 h-100">
                                 <div class="d-flex justify-content-center h-100">
-                                <div class="card-login">
+                                <div class="card-login col-12 col-sm-8 col-md-6 col-lg-4">
                                     <div class="card-header">
-                                        <h3>Iniciar sesion</h3>
+                                        <h3>Iniciar sesión</h3>
                                     </div>
                                     <div class="card-body">
 
