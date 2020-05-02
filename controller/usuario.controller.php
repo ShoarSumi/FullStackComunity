@@ -21,6 +21,9 @@ class ControllerUsuario{
                 if($_POST["username"]== $respuesta["usuario"] && $respuesta["password"]==$encriptar){
 
                     $_SESSION["iniciarSesion"]="ok";
+                    $_SESSION["nombre"]=$respuesta['nombre'];
+                    $_SESSION["usuario"]=$respuesta['usuario'];
+                    $_SESSION["foto"]=$respuesta['foto'];
                         echo '<script>
                             window.location = "inicio";
                         </script>';

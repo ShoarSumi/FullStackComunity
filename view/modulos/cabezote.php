@@ -23,9 +23,19 @@
                             <?php
                                 if(isset($_SESSION["iniciarSesion"]) && $_SESSION["iniciarSesion"]=="ok"):
                             ?>
+
+                            <li class="nav-item">
+                                <a class="nav-link enlaces lead" href=""><?php echo $_SESSION["usuario"];?></a>
+                            </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-item nav-link enlaces lead dropdown-toggle mr-md-2" href="#" id="bd-versions" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <img src="view/img/desarrollo.jpg" class="img-fluid logo-user h-100" alt="usuario">
+                                    <?php
+                                        if($_SESSION['foto']!=""){
+                                            echo '<img src="'.$_SESSION['foto'].'" class="img-fluid logo-user h-100" alt="usuario">';
+                                        }else{
+                                            echo '<img src="view/imgUsuarios/default/avatar.png" class="img-fluid logo-user h-100" alt="usuario">';
+                                        }
+                                    ?>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-md-right" aria-labelledby="bd-versions">
                                     <a class="dropdown-item" href="cerrar">Cerrar</a>
