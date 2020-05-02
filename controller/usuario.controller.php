@@ -2,7 +2,7 @@
 
 class ControllerUsuario{
 
-    function ctrUsuario(){
+    static public function ctrUsuario(){
         
         if(isset($_POST["username"])){
             if(preg_match('/^[-a-zA-Z0-9_]+$/', $_POST["username"]) && preg_match('/^[-a-zA-Z0-9_]+$/', $_POST["password"])){
@@ -16,7 +16,9 @@ class ControllerUsuario{
 
                 /* var_dump($respuesta); */
 
-                if($_POST["username"]== $respuesta["usuario"] && $_POST["password"]==$respuesta["password"]){
+                $encriptar = crypt($_POST['password'],'$2a$07$usesomesillystringforsalt$');
+
+                if($_POST["username"]== $respuesta["usuario"] && $respuesta["password"]==$encriptar){
 
                     $_SESSION["iniciarSesion"]="ok";
                         echo '<script>
@@ -33,6 +35,136 @@ class ControllerUsuario{
                 }
             }
         }
+    }
+
+    static public function ctrCrearUsuario(){
+
+        if(isset($_POST['nuevoUsuario'])){
+            if(preg_match('/^[a-zA-Z0-9ñÑáéíóú -]+$/',$_POST['nuevoNombre'])&&
+            preg_match('/^[a-zA-Z0-9ñÑáéíóú]+$/',$_POST['nuevoUsuario'])&&
+            preg_match('/^[a-zA-Z0-9ñÑáéíóú ]+$/',$_POST['nuevoPassword'])){
+
+                $ruta="";
+                
+
+                if(isset($_FILES['nuevaFoto']['tmp_name'])){
+                    list($ancho,$alto) = getimagesize($_FILES['nuevaFoto']["tmp_name"]);
+                    $nuevoAncho=500;
+                    $nuevoAlto=500;
+
+                    /* creando el directorio */
+
+                    $directorio = "view/imgUsuarios/".$_POST['nuevoUsuario'];
+
+                    mkdir($directorio,0755);
+
+                    if($_FILES['nuevaFoto']["type"]=="image/png"){
+
+                        $aleatorio=mt_rand(100,999);
+
+                        $ruta = "view/imgUsuarios/".$_POST['nuevoUsuario']."/".$aleatorio.".png";
+
+                        /* RECORTE DE LA IMAGEN */
+
+                        $origen=imagecreatefrompng($_FILES["nuevaFoto"]["tmp_name"]);
+
+                        $destino= imagecreatetruecolor($nuevoAncho,$nuevoAlto);
+
+                        imagecopyresized($destino,$origen,0,0,0,0,$nuevoAncho,$nuevoAlto,$ancho,$alto);
+
+                        imagepng($destino,$ruta);
+
+                    }
+
+                    if($_FILES['nuevaFoto']["type"]=="image/jpeg"){
+
+                        $aleatorio=mt_rand(100,999);
+
+                        $ruta = "view/imgUsuarios/".$_POST['nuevoUsuario']."/".$aleatorio.".jpeg";
+
+                        /* RECORTE DE LA IMAGEN */
+
+                        $origen=imagecreatefromjpeg($_FILES["nuevaFoto"]["tmp_name"]);
+
+                        $destino= imagecreatetruecolor($nuevoAncho,$nuevoAlto);
+
+                        imagecopyresized($destino,$origen,0,0,0,0,$nuevoAncho,$nuevoAlto,$ancho,$alto);
+
+                        imagejpeg($destino,$ruta);
+
+                    }
+
+
+                }
+                
+                $tabla = "usuario";
+
+                $encriptar = crypt($_POST['nuevoPassword'],'$2a$07$usesomesillystringforsalt$');
+
+                $datos=array("nombre"=>$_POST['nuevoNombre'],
+                                "usuario"=>$_POST['nuevoUsuario'],
+                                "password"=>$encriptar,
+                                "telefono"=>$_POST['nuevoTelefono'],
+                                "foto"=>$ruta);
+
+                 /* verificar si existe usuario */
+
+                $existe = ModelUsuario::mdlExisteUsuario($tabla,$_POST['nuevoUsuario']);
+
+                /* cargando usuarios */
+
+                if($_POST['nuevoUsuario']==$existe['usuario']){
+                    echo '<script>
+                    swal({
+                        type:"error",
+                        title:"es usuario '.$_POST['nuevoUsuario'].' ya existe",
+                        showConfirmButton:true,
+                        confirmButtonText:"cerrar"
+
+                    }).then(function(result){
+                        if(result.value){
+                            window.location="inicio";
+                        }
+                    })
+                    </script>';
+                }else{
+                    $respuesta = ModelUsuario::mdlIngresarUsuario($tabla,$datos);
+                }
+
+                if($respuesta == "ok"){
+                    echo '<script>
+                    swal({
+                        type:"success",
+                        title:"Su registro fue exitoso",
+                        showConfirmButton:true,
+                        confirmButtonText:"cerrar"
+
+                    }).then(function(result){
+                        if(result.value){
+                            window.location="login";
+                        }
+                    })
+                    </script>';
+                } 
+
+
+            }else{
+                echo '<script>
+                    swal({
+                        type:"error",
+                        title:"El campo no puede llevar caracteres especiales",
+                        showConfirmButton:true,
+                        confirmButtonText:"cerrar"
+
+                    }).then(function(result){
+                        if(result.value){
+                            window.location="inicio";
+                        }
+                    })
+                </script>';
+            }
+        }
+
     }
 
 }

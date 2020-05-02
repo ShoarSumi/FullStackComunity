@@ -1,6 +1,6 @@
 <?php
     class Conexion{
-        static function conectar(){
+        static public function conectar(){
             try{
                 $link = new PDO("mysql::host=localhost;dbname=fullstack","root","");
 

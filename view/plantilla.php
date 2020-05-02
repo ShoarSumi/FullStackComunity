@@ -17,12 +17,21 @@
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
     <link rel="icon" href="view/img/logoMin1.png">
+
+    <!-- iconos -->
+    <script src="https://kit.fontawesome.com/9b880b396c.js" crossorigin="anonymous"></script>
+
+    <!-- plugins -->
+    <!-- SweetAlert 2 -->
+    <script src="view/plugins/sweetalert2/sweetalert2.all.js"></script>
+
+    
     <title>FullStack</title>
 </head>
 <body>
 
     <?php
-            if(isset($_GET["ruta"]) && ($_GET["ruta"]=="login" || $_GET["ruta"]=="registrar")){
+            if(isset($_GET["ruta"]) && ($_GET["ruta"]=="login")){
 
                 include 'modulos/'.$_GET["ruta"].'.php';
 
@@ -60,5 +69,6 @@
     <script src="view/js/jquery.js"></script>
     <script src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.js"></script>
     <script src="view/js/bootstrap.min.js"></script>
+    <script src="view/js/subirFoto.js"></script>
 </body>
 </html>
